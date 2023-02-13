@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "./components/characterCard";
 import "./App.css";
+import { Button } from "@mantine/core";
 
 function App() {
   const [data, setData] = useState<any[]>([]);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div>
       <div>Hello</div>
+      <Button>click Me!</Button>
       <div className="cardContainer">
         {data.map((x) => {
           return <CharacterCard key={x.id} character={x} />;
