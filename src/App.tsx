@@ -19,9 +19,11 @@ function App() {
   return (
     <div>
       <div>Hello</div>
-      {data.map((x) => {
-        return <CharacterCard key={x.id} character={x} />;
-      })}
+      <div className="cardContainer">
+        {data.map((x) => {
+          return <CharacterCard key={x.id} character={x} />;
+        })}
+      </div>
     </div>
   );
 }
