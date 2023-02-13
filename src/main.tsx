@@ -3,21 +3,30 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { MantineProvider } from "@mantine/core";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import NarutoPgae from "./pages/narutoPgae";
+import ItemsPage from "./pages/itemsPage";
+import Root from "./App";
+import HomePage from "./pages/homePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/naruto",
+        element: <NarutoPgae />,
+      },
 
-  {
-    path: "/home",
-    element: <h1>home</h1>,
-  },
-
-  {
-    path: "/school",
-    element: <h1>School</h1>,
+      {
+        path: "/items",
+        element: <ItemsPage />,
+      },
+    ],
   },
 ]);
 
