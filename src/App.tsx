@@ -19,14 +19,8 @@ function App() {
   return (
     <div>
       <div>Hello</div>
-      <CharacterCard />
-      {data.map((character) => {
-        return (
-          <div>
-            <img src={character.images[0]} />
-            <div>{character.name}</div>
-          </div>
-        );
+      {data.map((x) => {
+        return <CharacterCard key={x.id} character={x} />;
       })}
     </div>
   );
