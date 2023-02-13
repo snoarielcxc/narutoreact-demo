@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
+import CharacterCard from "./components/characterCard";
 import "./App.css";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       <div>Hello</div>
-
+      <CharacterCard />
       {data.map((character) => {
         return (
           <div>
