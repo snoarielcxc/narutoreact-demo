@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   useEffect(() => {
     async function fetchNaruto() {
       let response = await fetch(
@@ -19,7 +19,15 @@ function App() {
   return (
     <div>
       <div>Hello</div>
-      <div>{JSON.stringify(data)}</div>
+
+      {data.map((character) => {
+        return (
+          <div>
+            <img src={character.images[0]} />
+            <div>{character.name}</div>
+          </div>
+        );
+      })}
     </div>
   );
 }
